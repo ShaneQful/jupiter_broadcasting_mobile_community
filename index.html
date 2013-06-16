@@ -68,7 +68,7 @@ Copyright [2012] [Fingertip Tech, INC]
 				<div data-role="header" data-position="fixed"> 
 						<div data-role="controlgroup" data-type="horizontal" data-inline="true" >
 							<a href="#" data-role="button" class="ui-btn-active ui-state-persist">Live</a>
-							<a href="#" data-role="button">All</a>
+							<a href="#all" data-role="button">All</a>
 							<a href="#latest" data-role="button" id="latest">Latest</a>
 							<a href="#" data-role="button">Reminders</a>
 						</div>
@@ -117,7 +117,7 @@ Copyright [2012] [Fingertip Tech, INC]
 				<div data-role="header" data-position="fixed"> 
 						<div data-role="controlgroup" data-type="horizontal" data-inline="true" >
 							<a href="#shows" data-role="button">Live</a>
-							<a href="#" data-role="button">All</a>
+							<a href="#all" data-role="button">All</a>
 							<a href="#latest" data-role="button" class="ui-btn-active " id="latest">Latest</a>
 							<a href="#" data-role="button">Reminders</a>
 						</div>
@@ -125,6 +125,47 @@ Copyright [2012] [Fingertip Tech, INC]
 			</div><!-- /header -->
 			<div data-role="content">
 				<div id="latest-holder"></div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-transition="none">
+				<div id="main-nav-bar" data-role="navbar">
+					<ul>
+						<li><a href="#now-playing" data-theme="a" data-icon="disk" data-iconpos="top">Now Playing</a></li>
+						<li><a href="#shows" class="ui-btn-active ui-state-persist" data-icon="aerial-portable" data-iconpos="top">Shows</a></li>
+						<li><a href="#settings" data-icon="speech-bubble-full" data-iconpos="top">Settings</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page:latest -->
+		<!-- Shows:Subpage:All -->
+		<div id="all" data-role="page" data-dom-cache="true" data-theme="a">
+			<div data-role="header" data-position="fixed">
+				<h1>Shows</h1>
+				<div data-role="header" data-position="fixed">
+						<div data-role="controlgroup" data-type="horizontal" data-inline="true" >
+							<a href="#shows" data-role="button">Live</a>
+							<a href="#all" data-role="button" id="all" class="ui-btn-active">All</a>
+							<a href="#latest" data-role="button">Latest</a>
+							<a href="#" data-role="button">Reminders</a>
+						</div>
+				</div>
+			</div><!-- /header -->
+			<div data-role="content">
+				<ul data-role="listview" id="audio-or-video-list">
+					<li data-icon="play">
+						<a href="#" class="ui-link-inherit" onclick="jb.all.populateshows('audio');">
+							<img src="resources/images/icon-disk.png" class="ui-li-thumb">
+							<h3 class="ui-li-heading">Audio Shows</h3>
+							<p class="ui-li-desc">Listen to your favorite jupiter broadcasting show</p>
+						</a>
+					</li>
+					<li data-icon="play">
+						<a href="#" class="ui-link-inherit" onclick="jb.all.populateshows('video');">
+							<img src="resources/images/icon-disk.png" class="ui-li-thumb">
+							<h3 class="ui-li-heading">Video Shows</h3>
+							<p class="ui-li-desc">Watch a video of your favorite jupiter broadcasting show</p>
+						</a>
+					</li>
+				</ul>
 			</div>
 			<div data-role="footer" data-position="fixed" data-transition="none">
 				<div id="main-nav-bar" data-role="navbar">
